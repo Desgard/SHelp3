@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import * as React from "react";
 import { QueryClient, QueryClientProvider, QueryCache } from "react-query";
-import { ChakraProvider, Box, Heading } from "@chakra-ui/react";
+import { ChakraProvider, Box, Heading, Center } from "@chakra-ui/react";
 import { Toaster, toast } from "react-hot-toast";
 import theme from "../theme";
 import { Provider as WagmiProvider } from "wagmi";
@@ -31,14 +31,21 @@ const App: NextPage = () => {
   return (
     <WagmiProvider autoConnect provider={provider}>
       <ChakraProvider theme={theme}>
+        <Box margin={20}>
+          <Center>
+            <Heading as='h3' size='xl'>
+              疫情求助留言
+            </Heading>
+          </Center>
+        </Box>
         <QueryClientProvider client={queryClient}>
           <Box p={8} maxW="600px" minW="320px" m="0 auto">
-            <Comments topic="help" />
+            <Comments topic="help-sh" />
             <Toaster position="bottom-right" />
           </Box>
         </QueryClientProvider>
       </ChakraProvider>
-    </WagmiProvider>
+    </WagmiProvider >
   );
 };
 

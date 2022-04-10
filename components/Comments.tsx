@@ -23,7 +23,9 @@ const Comments: React.FunctionComponent<CommentsProps> = ({ topic }) => {
       )}
       <Stack spacing={4}>
         {query.data?.map((comment) => (
-          <Comment key={comment.id} comment={comment} />
+          <>
+            <Comment key={comment.id} comment={comment} />
+          </>
         ))}
         {query.isFetched && <CommentEditor topic={topic} />}
       </Stack>
