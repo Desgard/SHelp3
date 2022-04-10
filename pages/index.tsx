@@ -33,7 +33,7 @@ const App: NextPage = () => {
       <ChakraProvider theme={theme}>
         <QueryClientProvider client={queryClient}>
           <Box p={8} maxW="600px" minW="320px" m="0 auto">
-            <Comments topic="my-blog-post" />
+            <Comments topic="help" />
             <Toaster position="bottom-right" />
           </Box>
         </QueryClientProvider>
